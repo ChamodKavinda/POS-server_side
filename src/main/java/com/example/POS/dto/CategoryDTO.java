@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class CategoryDTO {
-    private int catid;
-    private String catname;
+    private int cat_id;
+    private String cat_name;
     private boolean active;
 }

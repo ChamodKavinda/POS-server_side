@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class CategoryDTOUpdate {
-    private String catname;
+    private String cat_name;
     private boolean active;
 }

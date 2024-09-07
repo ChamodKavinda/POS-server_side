@@ -11,23 +11,23 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.AUTO)
 
     @Column(name="cat_id",length = 11)
-    private int catid;
+    private int cat_id;
 
     @Column(name="cat_name",length = 45)
-    private String catname;
+    private String cat_name;
 
     @Column(name="active",columnDefinition = "TINYINT default 1")
     private boolean active;
 
 
-    public Category(int catid, String catname, boolean active) {
-        this.catid = catid;
-        this.catname = catname;
+    public Category(int cat_id, String cat_name, boolean active) {
+        this.cat_id = cat_id;
+        this.cat_name = cat_name;
         this.active = active;
     }
 
-    public Category(String catname, boolean active) {
-        this.catname = catname;
+    public Category(String cat_name, boolean active) {
+        this.cat_name = cat_name;
         this.active = active;
     }
 
@@ -35,19 +35,19 @@ public class Category {
     }
 
     public int getCatid() {
-        return catid;
+        return cat_id;
     }
 
-    public void setCatid(int catid) {
-        this.catid = catid;
+    public void setCatid(int cat_id) {
+        this.cat_id = cat_id;
     }
 
     public String getCatname() {
-        return catname;
+        return cat_name;
     }
 
-    public void setCatname(String catname) {
-        this.catname = catname;
+    public void setCatname(String cat_name) {
+        this.cat_name = cat_name;
     }
 
     public boolean isActive() {
@@ -61,8 +61,8 @@ public class Category {
     @Override
     public String toString() {
         return "Category{" +
-                "catid=" + catid +
-                ", catname='" + catname + '\'' +
+                "cat_id=" + cat_id +
+                ", cat_name='" + cat_name + '\'' +
                 ", active=" + active +
                 '}';
     }

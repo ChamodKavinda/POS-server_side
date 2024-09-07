@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class CategoryDTOSave {
 
-    private String catname;
+    private String cat_name;
     private boolean active;
 }
