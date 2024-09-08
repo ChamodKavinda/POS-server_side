@@ -36,4 +36,14 @@ public class CategoryController {
         String id = categoryService.updateCategory(categoryDTOUpdate);
         return "updated";
     }
+
+    @DeleteMapping(path = "/delete/{id}")
+    public String DeleteCategory(@PathVariable(value="id") int id){
+        boolean deleteCategory = categoryService.deleteCategory(id);
+        if (deleteCategory){
+            return "deleted";
+        }else{
+            return "not deleted";
+        }
+    }
 }
