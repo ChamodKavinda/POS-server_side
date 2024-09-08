@@ -3,6 +3,7 @@ package com.example.POS.contoller;
 
 import com.example.POS.dto.CategoryDTO;
 import com.example.POS.dto.CategoryDTOSave;
+import com.example.POS.dto.CategoryDTOUpdate;
 import com.example.POS.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -28,5 +29,11 @@ public class CategoryController {
     public List<CategoryDTO> getCategory(){
         List<CategoryDTO> categoryList = categoryService.getAllCategory();
         return categoryList;
+    }
+
+    @PutMapping(path = "/update")
+    public String updateCategory(@RequestBody CategoryDTOUpdate categoryDTOUpdate){
+        String id = categoryService.updateCategory(categoryDTOUpdate);
+        return "updated";
     }
 }
