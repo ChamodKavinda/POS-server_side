@@ -2,6 +2,7 @@ package com.example.POS.service.IMPL;
 
 import com.example.POS.dto.CategoryDTO;
 import com.example.POS.dto.CategoryDTOSave;
+import com.example.POS.dto.CategoryDTOUpdate;
 import com.example.POS.entity.Category;
 import com.example.POS.repo.CategoryRepo;
 import com.example.POS.service.CategoryService;
@@ -38,5 +39,18 @@ public class CategoryServiceIMPL implements CategoryService {
             categoryDtoList.add(categoryDTO);
         }
         return categoryDtoList;
+    }
+
+    @Override
+    public String updateCategory(CategoryDTOUpdate categoryDTOUpdate) {
+        if (categoryRepo.existsById(categoryDTOUpdate.getCat_id())){
+            Category category = categoryRepo.getById(categoryDTOUpdate.getCat_id());
+            category.setCatname(categoryDTOUpdate.getCat_name());
+            category.setActive(categoryDTOUpdate.isActive());
+            categoryRepo.save(category);
+        }else{
+            System.out.println("Category id not available");
+        }
+        return null;
     }
 }
