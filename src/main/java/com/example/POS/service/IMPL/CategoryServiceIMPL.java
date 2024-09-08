@@ -49,8 +49,19 @@ public class CategoryServiceIMPL implements CategoryService {
             category.setActive(categoryDTOUpdate.isActive());
             categoryRepo.save(category);
         }else{
-            System.out.println("Category id not available");
+            System.out.println("update id not available");
         }
         return null;
+    }
+
+    @Override
+    public boolean deleteCategory(int id) {
+        if (categoryRepo.existsById(id)) {
+            categoryRepo.deleteById(id);
+            return true;
+        }else{
+            System.out.println("delete id not available");
+        }
+        return false;
     }
 }
