@@ -23,6 +23,9 @@ public class Brand {
         this.active = active;
     }
 
+    public Brand() {
+    }
+
     public Brand(String brand_name, boolean active) {
         this.brand_name = brand_name;
         this.active = active;
